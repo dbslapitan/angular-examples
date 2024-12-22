@@ -23,4 +23,8 @@ export class AppComponent {
   onRepopulateCourses(){
     this.COURSES = COURSES;
   }
+
+  trackFunction(index: number, course: Course) {
+    return course.id;
+  }
 }

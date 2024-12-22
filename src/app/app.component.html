@@ -7,7 +7,7 @@
 <button (click)="onEmptyCourses()">Empty Courses</button>
 <button (click)="onRepopulateCourses()">Repopulate Courses</button>
 <div class="courses">
-  @for (course of COURSES; track course.id) {
+  @for (course of COURSES; track trackFunction($index, course)) {
       <course-card (courseSelected)="onCourseSelected($event)" [course]="course"></course-card>
   } @empty {
     <h1>Courses is empty!!!</h1>
