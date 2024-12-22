@@ -15,4 +15,12 @@ export class AppComponent {
   onCourseSelected(course: Course) {
     console.log(course);
   }
+
+  onEmptyCourses(){
+    this.COURSES = [];
+  }
+
+  onRepopulateCourses(){
+    this.COURSES = COURSES;
+  }
 }
