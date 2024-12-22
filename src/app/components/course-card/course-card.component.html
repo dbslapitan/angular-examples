@@ -3,13 +3,13 @@
   <div class="course-title">
     {{course.description}}
   </div>
-  @if (course.id === 2) {
-    <h2>No image available</h2>
-  } @else {
-    <img width="300" alt="Angular Logo"
-         [src]="course.iconUrl">
-  }
-
+<!--  @if (course.id === 2) {-->
+<!--    <h2>No image available</h2>-->
+<!--  } @else {-->
+<!--    <img width="300" alt="Angular Logo"-->
+<!--         [src]="course.iconUrl">-->
+<!--  }-->
+  <h2 *ngIf="course.id === 2">No image available</h2>
   <div class="course-description">
     {{course.longDescription}}
   </div>
