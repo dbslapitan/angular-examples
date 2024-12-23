@@ -6,17 +6,18 @@
 </div>
 <button (click)="onEmptyCourses()">Empty Courses</button>
 <button (click)="onRepopulateCourses()">Repopulate Courses</button>
+<button (click)="onAddCourse()">Add Course</button>
 <div class="courses" #divContainer>
 
-  <course-card (courseSelected)="onCourseSelected($event)" [course]="COURSES[0]" #cardRefOne></course-card>
-  <course-card (courseSelected)="onCourseSelected($event)" [course]="COURSES[1]"></course-card>
+<!--  <course-card (courseSelected)="onCourseSelected($event)" [course]="COURSES[0]" #cardRefOne></course-card>-->
+<!--  <course-card (courseSelected)="onCourseSelected($event)" [course]="COURSES[1]"></course-card>-->
 
 
-<!--  @for (course of COURSES; track trackFunction($index, course)) {-->
-<!--      <course-card (courseSelected)="onCourseSelected($event)" [course]="course"></course-card>-->
-<!--  } @empty {-->
-<!--    <h1>Courses is empty!!!</h1>-->
-<!--  }-->
+  @for (course of COURSES; track trackFunction($index, course)) {
+      <course-card (courseSelected)="onCourseSelected($event)" [course]="course"></course-card>
+  } @empty {
+    <h1>Courses is empty!!!</h1>
+  }
 
 <!--  <course-card *ngFor="let course of COURSES" [course]="course" (courseSelected)="onCourseSelected(course)" />-->
 </div>
