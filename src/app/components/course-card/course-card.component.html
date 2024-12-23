@@ -25,11 +25,11 @@
 <!--    }-->
 <!--  }-->
 
-  <ng-containerg [ngSwitch]="course.category">
+  <ng-container [ngSwitch]="course.category">
     <p class="category" *ngSwitchCase="'BEGINNER'">Beginner</p>
     <p class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</p>
     <p class="category" *ngSwitchCase="'ADVANCED'">Advanced</p>
     <p class="category" *ngSwitchDefault>Advanced</p>
-  </ng-containerg>
+  </ng-container>
   <button (click)="onViewClick()">View Course</button>
 </div>
