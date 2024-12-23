@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Course} from '../../model/course';
-import {NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase} from '@angular/common';
+import {NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
 
 @Component({
   selector: 'course-card',
@@ -9,7 +9,8 @@ import {NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase} from '@angular/common';
     NgClass,
     NgStyle,
     NgSwitch,
-    NgSwitchCase
+    NgSwitchCase,
+    NgSwitchDefault
   ],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
