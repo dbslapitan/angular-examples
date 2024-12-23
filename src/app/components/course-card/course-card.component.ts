@@ -1,12 +1,13 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Course} from '../../model/course';
-import {NgClass, NgIf} from '@angular/common';
+import {NgClass, NgIf, NgStyle} from '@angular/common';
 
 @Component({
   selector: 'course-card',
   imports: [
     NgIf,
-    NgClass
+    NgClass,
+    NgStyle
   ],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
@@ -50,6 +51,12 @@ export class CourseCardComponent {
       beginner: false,
       intermediate: false,
       advanced: false
+    }
+  }
+
+  cardStyles(){
+    return {
+      backgroundImage: `url(${this.course.iconUrl})`,
     }
   }
 }
