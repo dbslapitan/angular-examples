@@ -7,13 +7,13 @@
 <button (click)="onEmptyCourses()">Empty Courses</button>
 <button (click)="onRepopulateCourses()">Repopulate Courses</button>
 <div class="courses">
-<!--  @for (course of COURSES; track trackFunction($index, course)) {-->
-<!--      <course-card (courseSelected)="onCourseSelected($event)" [course]="course"></course-card>-->
-<!--  } @empty {-->
-<!--    <h1>Courses is empty!!!</h1>-->
-<!--  }-->
+  @for (course of COURSES; track trackFunction($index, course)) {
+      <course-card (courseSelected)="onCourseSelected($event)" [course]="course"></course-card>
+  } @empty {
+    <h1>Courses is empty!!!</h1>
+  }
 
-  <course-card *ngFor="let course of COURSES" [course]="course" (courseSelected)="onCourseSelected(course)" />
+<!--  <course-card *ngFor="let course of COURSES" [course]="course" (courseSelected)="onCourseSelected(course)" />-->
 </div>
 
 

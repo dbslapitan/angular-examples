@@ -1,11 +1,12 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Course} from '../../model/course';
-import {NgIf} from '@angular/common';
+import {NgClass, NgIf} from '@angular/common';
 
 @Component({
   selector: 'course-card',
   imports: [
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
@@ -21,5 +22,34 @@ export class CourseCardComponent {
   onViewClick(){
     console.log("View Clicked...");
     this.courseSelected.emit(this.course);
+  }
+
+  cardClasses(){
+    if(this.course.category === 'BEGINNER'){
+      return {
+        beginner: true,
+        intermediate: false,
+        advanced: false
+      }
+    }
+    else if(this.course.category === 'INTERMEDIATE'){
+      return {
+        beginner: false,
+        intermediate: true,
+        advanced: false
+      }
+    }
+    else if(this.course.category === 'ADVANCED'){
+      return {
+        beginner: false,
+        intermediate: false,
+        advanced: true
+      }
+    }
+    return {
+      beginner: false,
+      intermediate: false,
+      advanced: false
+    }
   }
 }
