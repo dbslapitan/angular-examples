@@ -59,7 +59,7 @@ export class CourseCardComponent {
 
   cardStyles(){
     return {
-      backgroundImage: `url(${this.course.iconUrl})`,
+      // backgroundImage: `url(${this.course.iconUrl})`,
     }
   }
 }

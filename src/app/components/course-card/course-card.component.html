@@ -10,9 +10,8 @@
 <!--         [src]="course.iconUrl">-->
 <!--  }-->
 <!--  <h2 *ngIf="course.id === 2">No image available</h2>-->
-  <div class="course-description">
-    {{course.longDescription}}
-  </div>
+  <ng-content select=".course-img"></ng-content>
+  <ng-content select=""></ng-content>
 <!--  @switch (course.category){-->
 <!--    @case ("BEGINNER"){-->
 <!--      <p>BEGINNER</p>-->

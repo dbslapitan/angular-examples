@@ -14,12 +14,18 @@
 
 
   @for (course of COURSES; track trackFunction($index, course)) {
-      <course-card (courseSelected)="onCourseSelected($event)" [course]="course"></course-card>
-  } @empty {
-    <h1>Courses is empty!!!</h1>
-  }
+      <course-card (courseSelected)="onCourseSelected($event)" [course]="course">
+        <img class="course-img" width="300" alt="Angular Logo" [src]="course.iconUrl">
+        <div class="course-description">
+          {{course.longDescription}}
+        </div>
+        <h5>Total Lessons: 110</h5>
+              </course-card>
+          } @empty {
+            <h1>Courses is empty!!!</h1>
+          }
 
-<!--  <course-card *ngFor="let course of COURSES" [course]="course" (courseSelected)="onCourseSelected(course)" />-->
+        <!--  <course-card *ngFor="let course of COURSES" [course]="course" (courseSelected)="onCourseSelected(course)" />-->
 </div>
 
 
