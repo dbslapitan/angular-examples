@@ -15,7 +15,7 @@
 
   @for (course of COURSES; track trackFunction($index, course)) {
       <course-card (courseSelected)="onCourseSelected($event)" [course]="course">
-        <img class="course-img" width="300" alt="Angular Logo" [src]="course.iconUrl">
+        <img class="course-img" width="300" alt="Angular Logo" [src]="course.iconUrl" #imageEl>
         <div class="course-description">
           {{course.longDescription}}
         </div>

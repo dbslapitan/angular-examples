@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {AfterViewInit, Component, ContentChild, ElementRef, EventEmitter, Input, Output} from '@angular/core';
 import {Course} from '../../model/course';
 import {NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
 
@@ -15,13 +15,16 @@ import {NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
 })
-export class CourseCardComponent {
+export class CourseCardComponent implements AfterViewInit {
 
   @Input({required:true})
   course: Course;
 
   @Output()
   courseSelected = new EventEmitter<Course>();
+
+  @ContentChild('imageEl')
+  imageEl: ElementRef;
 
   onViewClick(){
     console.log("View Clicked...");
@@ -61,5 +64,9 @@ export class CourseCardComponent {
     return {
       // backgroundImage: `url(${this.course.iconUrl})`,
     }
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.imageEl);
   }
 }
