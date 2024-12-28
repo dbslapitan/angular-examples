@@ -1,7 +1,8 @@
 import {Directive, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
 
 @Directive({
-  selector: '[highlighted]'
+  selector: '[highlighted]',
+  exportAs: 'hl',
 })
 export class HighlightedDirective {
 
@@ -40,4 +41,9 @@ export class HighlightedDirective {
   // get cssClasses() {
   //   return "1px solid red";
   // }
+
+  toggle(){
+    this.isHighlighted = !this.isHighlighted;
+    this.toggleEvent.emit(this.isHighlighted);
+  }
 }
