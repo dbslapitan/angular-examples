@@ -30,4 +30,8 @@ export class AppComponent implements AfterViewInit {
 
     }
 
+    toggleEmit(value: boolean) {
+      console.log(value);
+    }
+
 }
