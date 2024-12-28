@@ -3,26 +3,16 @@
   <div class="course-title">
     {{course.description}}
   </div>
-<!--  @if (course.id === 2) {-->
-<!--    <h2>No image available</h2>-->
-<!--  } @else {-->
-<!--    <img width="300" alt="Angular Logo"-->
-<!--         [src]="course.iconUrl">-->
-<!--  }-->
-<!--  <h2 *ngIf="course.id === 2">No image available</h2>-->
-  <ng-content select=".course-img"></ng-content>
-  <ng-content select=""></ng-content>
-<!--  @switch (course.category){-->
-<!--    @case ("BEGINNER"){-->
-<!--      <p>BEGINNER</p>-->
-<!--    }-->
-<!--    @case ("INTERMEDIATE"){-->
-<!--      <p>INTERMEDIATE</p>-->
-<!--    }-->
-<!--    @default {-->
-<!--      <p>ADVANCED</p>-->
-<!--    }-->
-<!--  }-->
+
+  <div class="course-image">
+    @if (course.iconUrl) {
+      <img [src]="course.iconUrl" alt="" class="course-image">
+    } @else {
+      <ng-container *ngTemplateOutlet="noImgTpl; context: {description: course.description}">
+
+      </ng-container>
+    }
+  </div>
 
   <ng-container [ngSwitch]="course.category">
     <p class="category" *ngSwitchCase="'BEGINNER'">Beginner</p>

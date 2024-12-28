@@ -9,3 +9,7 @@
 .course-card.advanced {
   background: rgba(220, 148, 148, 0.74);
 }
+
+.course-image{
+  width: 100%;
+}

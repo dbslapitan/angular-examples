@@ -1,21 +1,24 @@
-import {AfterViewInit, Component, ContentChild, ElementRef, EventEmitter, Input, Output} from '@angular/core';
+import {AfterViewInit, Component, ContentChild, ElementRef, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 import {Course} from '../../model/course';
-import {NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
+import {NgClass, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet} from '@angular/common';
 
 @Component({
   selector: 'course-card',
   imports: [
-    NgIf,
     NgClass,
     NgStyle,
     NgSwitch,
     NgSwitchCase,
-    NgSwitchDefault
+    NgSwitchDefault,
+    NgTemplateOutlet
   ],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
 })
 export class CourseCardComponent implements AfterViewInit {
+
+  @Input()
+  noImgTpl: TemplateRef<any>;
 
   @Input({required:true})
   course: Course;

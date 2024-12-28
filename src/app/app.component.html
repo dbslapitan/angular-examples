@@ -12,9 +12,17 @@
 <!--  <course-card (courseSelected)="onCourseSelected($event)" [course]="COURSES[0]" #cardRefOne></course-card>-->
 <!--  <course-card (courseSelected)="onCourseSelected($event)" [course]="COURSES[1]"></course-card>-->
 
+  <ng-template #blankImage let-courseName="description">
+    <p class="warn">{{courseName}} has no Image yet.</p>
+    <img src="/assets/empty-image.png" alt="">
+  </ng-template>
+
+<!--  <ng-container *ngTemplateOutlet="blankImage; context: {description: 'Dirk'}">-->
+
+<!--  </ng-container>-->
 
   @for (course of COURSES; track trackFunction($index, course)) {
-      <course-card (courseSelected)="onCourseSelected($event)" [course]="course">
+      <course-card (courseSelected)="onCourseSelected($event)" [course]="course" [noImgTpl]="blankImage">
         <img class="course-img" width="300" alt="Angular Logo" [src]="course.iconUrl" #imageEl>
         <div class="course-description">
           {{course.longDescription}}
