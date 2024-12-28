@@ -7,7 +7,6 @@ This course repository is updated to Angular v19:
 
 ![Angular Core Deep Dive](https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-core-in-depth-small.png)
 
-
 # Installation pre-requisites
 
 IMPORTANT: Please use Node 18 LTS (Long Term Support version). 
@@ -17,7 +16,6 @@ IMPORTANT: Please use Node 18 LTS (Long Term Support version).
 With the following command the angular-cli will be installed globally in your machine:
 
     npm install -g @angular/cli
-
 
 # How To install this repository
 
