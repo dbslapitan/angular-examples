@@ -1,3 +1,4 @@
+
 :host {
   display: block;
 }
@@ -16,9 +17,12 @@
   background: lightgray;
 }
 
-
 :host.is-odd {
   background: lightcyan;
+}
+
+:host-context(.salmon-theme) .course-card {
+  background: lightsalmon;
 }
 
 .course-card {
@@ -34,20 +38,19 @@
   font-weight: bold;
 }
 
-.course-card ::ng-deep .course-description {
+.course-card .course-description {
   max-width: 360px;
   margin: 0 auto;
   margin-top: 15px;
   user-select: none;
 }
 
-.course-card img {
-  border-radius: 4px;
-  margin-top: 10px;
+.course-card .course-description input {
+  font-size: 20px;
 }
 
 .course-card.beginner {
-    background: lightsalmon;
+  background: lightsalmon;
 }
 
 
