@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
     this.courses$ = this.coursesService.loadCourses();
   }
 
-
+  save(course: Course) {
+    this.coursesService.saveCourse(course);
+  }
 
 }
