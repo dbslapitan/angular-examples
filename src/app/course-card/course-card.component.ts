@@ -1,25 +1,27 @@
 import {
-    AfterContentInit,
-    AfterViewInit,
-    Component,
-    ContentChildren,
-    ElementRef,
-    EventEmitter,
-    Input,
-    OnInit,
-    Output,
-    QueryList,
-    ViewEncapsulation
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  ContentChildren,
+  ElementRef,
+  EventEmitter, InjectionToken,
+  Input,
+  OnInit,
+  Output,
+  QueryList,
+  ViewEncapsulation
 } from '@angular/core';
 import {Course} from '../model/course';
 import {CourseImageComponent} from '../course-image/course-image.component';
+import {CoursesService} from '../services/courses.service';
+import {HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'course-card',
     templateUrl: './course-card.component.html',
     styleUrls: ['./course-card.component.css'],
-    standalone: false
-})
+    standalone: false,
+    })
 export class CourseCardComponent implements OnInit {
 
     @Input()
