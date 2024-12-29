@@ -10,7 +10,7 @@
   <div class="courses">
 
     @for (course of (courses$ | async); track course.id){
-      <course-card [course]="course" (courseChanged)="save($event)">
+      <course-card highlighted [course]="course" (courseChanged)="save($event)">
         <course-image [src]="course.iconUrl"></course-image>
       </course-card>
     }
