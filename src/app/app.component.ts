@@ -1,22 +1,10 @@
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy, ChangeDetectorRef,
-  Component, DoCheck,
-  ElementRef,
-  Inject,
-  InjectionToken, OnChanges,
+  ChangeDetectionStrategy,
+  Component,
   OnInit,
-  QueryList, SimpleChanges,
-  ViewChild,
-  ViewChildren
 } from '@angular/core';
-import {COURSES} from '../db-data';
 import {Course} from './model/course';
-import {CourseCardComponent} from './course-card/course-card.component';
-import {HighlightedDirective} from './directives/highlighted.directive';
-import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {CoursesService} from './services/courses.service';
+import {CoursesService} from './courses/courses.service';
 
 // function courseServiceProvider(http: HttpClient): CoursesService {
 //   return new CoursesService(http);
@@ -57,7 +45,7 @@ export class AppComponent implements OnInit {
 
   courses: Course[];
 
-  constructor(private coursesService: CoursesService, private cd: ChangeDetectorRef) {
+  constructor(private coursesService: CoursesService) {
 
   }
 
@@ -65,8 +53,7 @@ export class AppComponent implements OnInit {
     console.log('ngOnInit');
     this.coursesService.loadCourses().subscribe(courses => {
       this.courses = courses;
-
-      this.cd.markForCheck();
+      console.log(courses)
     });
   }
 
