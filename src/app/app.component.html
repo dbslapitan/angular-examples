@@ -7,11 +7,11 @@
 
 <div>
 
+  <button (click)="onEditCourse()">Edit Course</button>
   <div class="courses">
-
-    @for (course of courses; track course.id){
-      <course-card [course]="course" (courseChanged)="save($event)">
-        <course-image [src]="course.iconUrl"></course-image>
+    @if (courses !== undefined) {
+      <course-card [course]="courses[0]" (courseChanged)="save($event)">
+        <course-image [src]="courses[0].iconUrl"></course-image>
       </course-card>
     }
   </div>

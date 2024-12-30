@@ -5,10 +5,10 @@ import {
   ContentChildren,
   ElementRef,
   EventEmitter, InjectionToken,
-  Input,
+  Input, OnChanges,
   OnInit,
   Output,
-  QueryList,
+  QueryList, SimpleChanges,
   ViewEncapsulation
 } from '@angular/core';
 import {Course} from '../model/course';
@@ -22,7 +22,7 @@ import {HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
     styleUrls: ['./course-card.component.css'],
     standalone: false,
     })
-export class CourseCardComponent implements OnInit {
+export class CourseCardComponent implements OnInit, OnChanges {
 
     @Input()
     course: Course;
@@ -48,6 +48,10 @@ export class CourseCardComponent implements OnInit {
         this.courseEmitter.emit({...this.course, description});
 
     }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log('ngOnChanges');
+  }
 
 
 

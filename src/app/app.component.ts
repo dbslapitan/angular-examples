@@ -4,9 +4,9 @@ import {
   Component, DoCheck,
   ElementRef,
   Inject,
-  InjectionToken,
+  InjectionToken, OnChanges,
   OnInit,
-  QueryList,
+  QueryList, SimpleChanges,
   ViewChild,
   ViewChildren
 } from '@angular/core';
@@ -49,8 +49,7 @@ import {CoursesService} from './services/courses.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: false,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  standalone: false
 })
 export class AppComponent implements OnInit {
 
@@ -63,6 +62,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('ngOnInit');
     this.coursesService.loadCourses().subscribe(courses => {
       this.courses = courses;
 
@@ -72,6 +72,12 @@ export class AppComponent implements OnInit {
 
   save(course: Course) {
     this.coursesService.saveCourse(course);
+  }
+
+  onEditCourse(){
+    const newCourse = {...this.courses[0]};
+    newCourse.description = "Course Edited";
+    this.courses[0] = newCourse;
   }
 
 }
