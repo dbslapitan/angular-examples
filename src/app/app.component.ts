@@ -5,6 +5,9 @@ import {
 } from '@angular/core';
 import {Course} from './model/course';
 import {CoursesService} from './courses/courses.service';
+import {CourseCardComponent} from './courses/course-card/course-card.component';
+import {FilterCategoryPipe} from './courses/filter-category.pipe';
+import {CourseImageComponent} from './courses/course-image/course-image.component';
 
 // function courseServiceProvider(http: HttpClient): CoursesService {
 //   return new CoursesService(http);
@@ -37,7 +40,12 @@ import {CoursesService} from './courses/courses.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: false
+  imports: [
+    CourseCardComponent,
+    FilterCategoryPipe,
+    CourseImageComponent
+  ],
+  standalone: true
 })
 export class AppComponent implements OnInit {
 

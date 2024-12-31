@@ -5,13 +5,19 @@ import {
   Output,
 } from '@angular/core';
 import {Course} from '../../model/course';
+import {NgIf, NgSwitch, NgSwitchCase} from '@angular/common';
 
 @Component({
-    selector: 'course-card',
-    templateUrl: './course-card.component.html',
-    styleUrls: ['./course-card.component.css'],
-    standalone: false
-    })
+  selector: 'course-card',
+  templateUrl: './course-card.component.html',
+  styleUrls: ['./course-card.component.css'],
+  imports: [
+    NgIf,
+    NgSwitch,
+    NgSwitchCase
+  ],
+  standalone: true
+})
 export class CourseCardComponent {
 
     @Input()
