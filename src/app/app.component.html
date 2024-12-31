@@ -8,10 +8,10 @@
 <div>
 
   <button (click)="onEditCourse()">Edit Course</button>
-  <div class="courses">g
+  <div class="courses">
     @if (courses !== undefined) {
 
-      @for (course of (courses | filterByCategory: "ADVANCED"); track course.id){
+      @for (course of (courses | filterByCategory: "BEGINNER"); track course.id){
         <course-card [course]="course" (courseChanged)="save($event)">
         <course-image [src]="course.iconUrl"></course-image>
       </course-card>
